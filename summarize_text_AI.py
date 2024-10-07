@@ -2,9 +2,10 @@ import openai
 import os
 import tiktoken
 import deepl
+import streamlit as st
 
 def summarize_text(user_text, lang='en'):
-    openai.api_key = os.environ["OPENAI_API_KEY"]
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
 
     # Define the system and user messages based on language
     if lang == 'en':
@@ -58,7 +59,7 @@ def summarize_text_final(text_list,lang='en'):
     return token_num, final_summary
 
 def translate_en_to_ko_using_openAI(text):
-    openai.api_key = os.environ["OPENAI_API_KEY"]
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
 
     system_message = "You are a helpful assistant that translates English texts into Korean. Your Korean must be accurate and natural."
     user_message = f"Translate the following text into Korean:\n{text}"
@@ -79,7 +80,7 @@ def translate_en_to_ko_using_openAI(text):
     return assistant_response
 
 def translate_en_to_ko_using_deepl(text):
-    auth_key = os.environ["DeepL_API_KEY"]
+    auth_key = st.secrets["DeepL_API_KEY"]
     translator = deepl.Translator(auth_key)
     result = translator.translate_text(text, target_lang="KO") # 번역할 언어를 한국어로 지정
     return result.text
