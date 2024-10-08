@@ -129,7 +129,7 @@ def main():
         with st.expander("Preview Uploaded PDF"):
             reader = PdfReader(uploaded_file)
             first_page_text = reader.pages[0].extract_text()
-            st.write(first_page_text[:1000]) + "...[생략]"  # Show a snippet of the first page
+            st.write(first_page_text[:1000] + "...[생략]")   # Show a snippet of the first page
 
     # Summarization process
     if clicked:
