@@ -129,7 +129,7 @@ def main():
         with st.expander("Preview Uploaded PDF"):
             reader = PdfReader(uploaded_file)
             first_page_text = reader.pages[0].extract_text()
-            st.write(first_page_text[:1000] + "...[생략]")   # Show a snippet of the first page
+            st.write(first_page_text[:500] + "...[생략]")   # Show a snippet of the first page
 
     # Summarization process
     if clicked:
@@ -138,5 +138,24 @@ def main():
         else:
             st.error("Please upload a PDF file.")
 
+    # Footer at the bottom
+    st.markdown("""
+        <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: transparent;
+            color: grey;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+        </style>
+        <div class="footer">
+            <p>Created by 동나의 욘노니~!</p>
+        </div>
+        """, unsafe_allow_html=True)
 if __name__ == "__main__":
     main()
