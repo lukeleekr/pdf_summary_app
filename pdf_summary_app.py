@@ -104,7 +104,7 @@ def summarize_pdf_file(pdf_file, lang, trans_checked):
 # Main Streamlit app
 def main():
     # Title with custom animation and styling
-    st.markdown('<h1 class="title">📄 PDF Summarization and Translation Tool</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="title">📄 Summarize your PDF!</h1>', unsafe_allow_html=True)
     
     # Subheader with animation and lighter text
     st.markdown('<h3 class="subheader">Easily summarize PDF files and translate them!</h3>', unsafe_allow_html=True)
