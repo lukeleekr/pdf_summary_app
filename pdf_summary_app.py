@@ -5,7 +5,30 @@ import os
 from PyPDF2 import PdfReader
 import tiktoken
 import textwrap
-
+# Adding custom CSS for reducing title size and spacing
+st.markdown(
+    """
+    <style>
+    .title {
+        font-size: 32px;
+        color: #4CAF50;
+        margin-top: -60px;
+    }
+    .subheader {
+        font-size: 24px;
+        color: #007BFF;
+    }
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 8px;
+    }
+    .stFileUploader {
+        padding-bottom: 10px;
+    }
+    </style>
+    """, unsafe_allow_html=True
+)
 # PDF 파일을 요약하는 함수
 def summarize_pdf_file(pdf_file, lang, trans_checked):
     if pdf_file is not None:
