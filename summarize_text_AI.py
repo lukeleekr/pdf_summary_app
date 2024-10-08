@@ -4,6 +4,7 @@ import tiktoken
 import deepl
 import streamlit as st
 
+
 def summarize_text(user_text, lang='en'):
     openai.api_key = st.secrets["OPENAI_API_KEY"]
 
