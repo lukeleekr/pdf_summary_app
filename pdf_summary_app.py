@@ -126,7 +126,7 @@ def main():
 
     # Display uploaded file preview
     if uploaded_file:
-        with st.expander("Preview Uploaded PDF"):
+        with st.expander("Preview Uploaded PDF up to 1000 characters"):
             reader = PdfReader(uploaded_file)
             first_page_text = reader.pages[0].extract_text()
             st.write(first_page_text[:1000])  # Show a snippet of the first page
